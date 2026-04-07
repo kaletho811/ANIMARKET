@@ -74,6 +74,81 @@ body{
     box-shadow: 0 10px 20px #00357a;
 }
 
+.busqueda{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.busqueda input{
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #1F48FF;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 8rem;
+    color: #00357a;
+}
+
+.busqueda input:focus{
+    outline: none;
+    border-color: #00357a;
+    box-shadow: 0 0 10px #00357a;
+}
+
+.slider-box {
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out; 
+}
+
+.slider-box li {
+    width: 100%; 
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.slider-box img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; 
+}
+
+.slider-text {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+
 main{
    width: 100%;
     max-width: 1200px;
