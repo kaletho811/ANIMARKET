@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: url('../images/fondo-principal.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    color: #1F48FF;
+    align-items: center;
+    padding: 1rem 0;
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
+.nav-container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.logo{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-toggle{
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.nav-toggle span{
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 2px;
+    display: block;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    margin: 0 auto;
+}
+
+.nav-menu li a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #1F48FF;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-menu li a:hover{
+    background-color: #00357a;
+    box-shadow: 0 10px 20px #00357a;
+}
+
+main{
+   width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: block;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.card{
+    background-color: transparent;
+    border: 2px solid #1F48FF;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    background-color: #1F48FF;
+    color: #fff;
+    border-color: #00357a;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px #00357a;
+}
