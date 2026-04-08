@@ -82,6 +82,12 @@ main{
     display: block;
 }
 
+h3{
+    text-align: center;
+    color: #1F48FF;
+    margin-bottom: 2rem;
+}
+
 .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

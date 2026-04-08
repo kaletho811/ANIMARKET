@@ -81,29 +81,9 @@ main{
     padding: 2rem 1rem;
     display: block;
 }
-
-.container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-}
-
-.card{
-    background-color: transparent;
-    border: 2px solid #1F48FF;
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    padding: 1rem 2rem;
+h3{
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #1F48FF;
+    margin-bottom: 2rem;
 }
 
-.card:hover{
-    background-color: #1F48FF;
-    color: #fff;
-    border-color: #00357a;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px #00357a;
-}
