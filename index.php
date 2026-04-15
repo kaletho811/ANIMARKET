@@ -1,5 +1,14 @@
+<?php 
+// 1. Incluimos la conexión (asegúrate de que el archivo conexion.php esté en la misma carpeta)
+include 'conexion.php'; 
+
+// 2. Consultamos los productos de la base de datos
+$query = "SELECT * FROM productos";
+$resultado = mysqli_query($conexion, $query);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +28,10 @@
             </button>
 
             <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/perro.html">Perro</a></li>
-                <li><a href="pages/gato.html">Gato</a></li>
-                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="pages/perro.php">Perro</a></li>
+                <li><a href="pages/gato.php">Gato</a></li>
+                <li><a href="pages/blog.php">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -68,59 +77,20 @@
     <h3>Nuestros Productos</h3>
     
     <div class="container">
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 1">
-            <h2>Medicamento 1</h2>
-            <p>$190.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 2">
-            <h2>Medicamento 2</h2>
-            <p>$60.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 3">
-            <h2>Medicamento 3</h2>
-            <p>$30.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 4">
-            <h2>Medicamento 4</h2>
-            <p>$40.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 5">
-            <h2>Medicamento 5</h2>
-            <p>$50.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 6">
-            <h2>Medicamento 6</h2>
-            <p>$60.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 7">
-            <h2>Medicamento 7</h2>
-            <p>$70.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 8">
-            <h2>Medicamento 8</h2>
-            <p>$80.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 9">
-            <h2>Medicamento 9</h2>
-            <p>$90.000</p>
-        </div>
-        <div class="card">
-            <img src="" alt="MEDICAMENTO 10">
-            <h2>Medicamento 10</h2>
-            <p>$100.000</p>
-        </div>
+        <?php
+        // 3. Este bucle reemplaza todas las tarjetas manuales. 
+        // Se creará una tarjeta por cada producto que tengas en la base de datos.
+        while($row = mysqli_fetch_assoc($resultado)) {
+        ?>
+            <div class="card">
+                <img src="assets/images/<?php echo $row['imagen']; ?>" alt="<?php echo $row['nombre']; ?>">
+                <h2><?php echo $row['nombre']; ?></h2>
+                <p>$<?php echo number_format($row['precio'], 0, ',', '.'); ?></p>
+                <small><?php echo $row['descripcion']; ?></small>
+            </div>
+        <?php } ?>
     </div>    
     </main>
 
-    <script type="module" src="assets/scripts/api.js"></script>
-</body>
+    </body>
 </html>

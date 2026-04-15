@@ -1,5 +1,10 @@
+<?php 
+// Incluimos la conexión por si en el futuro quieren mostrar noticias desde la DB
+include '../conexion.php'; 
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +23,16 @@
             </button>
 
             <ul class="nav-menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="perro.html">Perro</a></li>
-                <li><a href="gato.html">Gato</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="perro.php">Perro</a></li>
+                <li><a href="gato.php">Gato</a></li>
+                <li><a href="blog.php">Blog</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
         <h3>BLOG</h3>
-    </main>
+        </main>
 </body>
 </html>
